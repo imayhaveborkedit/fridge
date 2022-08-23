@@ -1,10 +1,9 @@
 import Config
 
 # Configure your database
+import_config "db.secret.exs"
+
 config :fridge, Fridge.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
   database: "fridge_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
@@ -73,5 +72,3 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-import_config "dev.secret.exs"
